@@ -1,0 +1,263 @@
+body {
+    background-color: var(--clr-bg-main);
+    font-family: var(--font-family);
+    position: relative;
+
+    svg {
+        max-height: 90%;
+    }
+    .svg-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        fill-opacity: 0.8;
+    }
+    .svg-right {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        fill-opacity: 0.8;
+    }
+    .svg-bottom-right {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        fill-opacity: 0.8;
+    }
+    .svg-bottom-left {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        fill-opacity: 0.8;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.login {
+    max-width: 1300px;
+    padding: 3rem;
+    margin: 0 auto;
+
+    &-details {
+        overflow: hidden;
+        width: 100%;
+    }
+    &-header {
+        padding: 3rem 0 2rem 0;
+        h2 {
+            color: var(--clr-heading-900);
+            font-weight: 500;
+        }
+        span {
+            color: var(--clr-heading-800);
+        }
+    }
+    &-body {
+        margin-inline: auto;
+        padding: 1.5rem 4rem;
+        position: relative;
+        > div {
+            flex-basis: 100%;
+        }
+        background-color: var(--clr-login-details);
+    }
+
+    &-rightSide {
+        padding: 4rem 0 0 0;
+        h4 {
+            color: var(--clr-logo);
+            font-weight: bold;
+            line-height: 0.9;
+            position: relative;
+        }
+        h6 {
+            color: var(--clr-login-text);
+            padding-bottom: 0.5rem;
+        }
+        .We-char {
+            letter-spacing: -8.8px;
+        }
+        form {
+            input:not(:nth-last-child(3)) {
+                min-width: 100%;
+            }
+            button {
+                background-color: var(--clr-bg-main);
+                color: var(--clr-heading-900);
+                padding: 0.8rem 2.4rem;
+                font-size: 0.7rem;
+                font-weight: bold;
+                border-radius: 2px;
+                &:hover {
+                    color: var(--clr-bg-main);
+                }
+            }
+            Input[type="checkbox"] {
+                appearance: none;
+                background-color: #fff;
+                border-radius: 1px;
+                width: 15px;
+                height: 15px;
+                display: grid;
+                place-content: center;
+                border: 1px solid var(--clr-bg-main);
+                &:checked {
+                    accent-color: var(--clr-bg-main);
+                    background-color: var(--clr-bg-main);
+                    filter: drop-shadow(0px 0px 2px gray);
+                }
+                &::before {
+                    content: "";
+                    background-color: CanvasText;
+                    width: 0.6em;
+                    height: 0.6em;
+                    color: #fff;
+                    transform: scale(0);
+                    transition: 120ms transform ease-in-out;
+                    transform-origin: bottom left;
+                    box-shadow: inset 1em 1em #fff;
+                    clip-path: polygon(
+                        14% 44%,
+                        0 65%,
+                        50% 100%,
+                        100% 16%,
+                        80% 0%,
+                        43% 62%
+                    );
+                }
+                &:checked::before {
+                    transform: scale(1);
+                }
+            }
+            .errorMsg {
+                color: red;
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+        .lang {
+            background-color: var(--clr-bg-main);
+            color: var(--clr-heading-900);
+            border-radius: 10px;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+            align-self: center;
+        }
+    }
+    &-leftSide {
+        h3 {
+            padding: 0 0 3rem 0;
+            font-weight: 600;
+            color: var(--clr-logo);
+        }
+    }
+    .W-char {
+        letter-spacing: -4px;
+    }
+    &-inputs {
+        input {
+            outline-color: var(--clr-bg-main);
+            border: 1px solid var(--clr-bg-main);
+            padding: 10px 40px;
+            border-radius: 2px;
+            &[type="password"] {
+                padding: 14px 40px 5px 40px;
+            }
+        }
+        .input-field,
+        .pass-field {
+            position: relative;
+            span {
+                position: absolute;
+                left: 20px;
+            }
+        }
+    }
+    .footer {
+        background-color: var(--clr-login-details);
+        gap: 10rem;
+        span {
+            display: inline-block;
+            color: var(--clr-logo);
+            font-size: 0.8125rem;
+        }
+    }
+    &-newUser {
+        width: 200px;
+        margin: 0 auto;
+        a {
+            color: var(--clr-logo);
+        }
+    }
+
+    &-linkColor a,
+    &-linkColor {
+        color: var(--clr-logo);
+        font-size: 0.8125rem;
+        font-weight: 500;
+    }
+    @media (max-width: 620px) {
+        & {
+            padding: 0;
+        }
+        .login-body {
+            padding: 0.8125rem;
+        }
+        .login-rightSide {
+            padding: 0.8125rem;
+        }
+        form {
+            font-size: 0.8125rem;
+            .watch-responsive a {
+                color: var(--clr-logo);
+            }
+        }
+        .footer {
+            gap: 0rem;
+        }
+        input:required form .errorMsg {
+            display: block;
+        }
+    }
+
+    @media (max-width: 222px) {
+        .watch-responsive {
+            padding: 0 !important;
+            font-size: 10px;
+        }
+        button {
+            padding: 5px !important;
+        }
+        .footer {
+            flex-direction: column;
+        }
+        .container-fluid {
+            padding: 0 !important;
+        }
+    }
+}
+
+// loader
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.sweet-loading[open] {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+    animation: fade-in 500ms forwards;
+}
