@@ -10,8 +10,9 @@ function LoginAr({ login, changLang, lang }) {
             password: "",
             checkbox: false,
         },
-        onSubmit: (values) => {
+        onSubmit: (values, { resetForm }) => {
             console.log(values);
+            resetForm();
             alert(JSON.stringify(values));
         },
         validationSchema: Yup.object({
